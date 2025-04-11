@@ -1,0 +1,287 @@
+/* Estilos base para el portafolio */
+/* Estilos para el header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 1.5rem 0;
+}
+
+.header-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Estilos responsivos para el header */
+@media (min-width: 768px) {
+    .header-title {
+        padding-left: 2rem;
+    }
+}
+
+/* Estilos generales */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-secondary);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+    background: rgb(26,18,94);
+    background: linear-gradient(76deg, rgba(26,18,94,1) 0%, rgba(33,30,190,1) 0%, rgba(13,13,172,1) 0%, rgba(22,18,94,1) 0%, rgba(13,13,172,1) 0%, rgba(96,105,182,1) 0%, rgba(24,22,22,1) 0%, rgba(50,65,164,1) 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+/* Efectos de transición para elementos */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos para el menú móvil */
+#mobile-menu {
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+#mobile-menu.active {
+    max-height: 300px;
+}
+
+/* Estilos para botones */
+.btn {
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn:hover::after {
+    left: 100%;
+}
+
+/* Estilos para tarjetas de proyectos */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Estilos para la sección de habilidades */
+.skill-tag {
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para enlaces */
+a {
+    transition: color 0.3s ease;
+}
+
+a:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Estilos para imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para la sección Hero */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: -1;
+}
+
+/* Estilos para la sección Sobre Mí */
+.about-section img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-section img:hover {
+    transform: scale(1.02);
+}
+
+/* Estilos para el footer */
+footer a:hover svg {
+    transform: scale(1.2);
+}
+
+footer svg {
+    transition: transform 0.3s ease;
+}
+
+/* Estilos mejorados para los iconos de redes sociales */
+footer .flex.justify-center svg {
+    width: 2rem;
+    height: 2rem;
+    transition: all 0.3s ease;
+}
+
+footer .flex.justify-center a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+footer .flex.justify-center a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+footer .flex.justify-center {
+    gap: 1.5rem;
+}
+
+/* Estilos para el botón de volver arriba */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-3px);
+}
+
+/* Media queries para ajustes específicos */
+@media (max-width: 840px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Animaciones para elementos al hacer scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Ajustes de accesibilidad */
+:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Estilos para tarjetas de servicio */
+.tarjeta-servicio {
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-servicio::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #0891b2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+/* Ajuste del footer */
+footer {
+    padding-top: 70%;
+}
