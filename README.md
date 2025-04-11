@@ -1,5 +1,3 @@
-# Portafolio
-# biblioteca
 # 🚀 Portafolio Profesional
 
 ¡Bienvenido a mi portafolio profesional! Este es un espacio donde muestro mis proyectos, habilidades y experiencia en el desarrollo web.
