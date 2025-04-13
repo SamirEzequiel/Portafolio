@@ -62,10 +62,11 @@ portafolio/
 1. Clona el repositorio
 2. Abre `index.html` en tu navegador
 3. ¡Disfruta de la experiencia!
+4. Abre directamente en tu navegador samirgoede.cl
 
 ## 📞 Contacto
 
-- 📧 Email: [tu.email@gmail.com](mailto:tu.email@gmail.com)
+- 📧 Email: samirgoede35@gmail.com
 - 💼 LinkedIn: [Samir Goede](https://www.linkedin.com/in/samir-goede-a96b62290/)
 - 💻 GitHub: [SamirEzequiel](https://github.com/SamirEzequiel)
 
