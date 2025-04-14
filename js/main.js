@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const headerTitle = document.querySelector('.header-title');
     let lastScroll = 0;
     const scrollThreshold = 50;
+    let ticking = false;
 
     /**
      * Función que maneja el comportamiento del header al hacer scroll
@@ -14,19 +15,20 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     function handleScroll() {
         const currentScroll = window.pageYOffset;
-        const isScrollingDown = currentScroll > lastScroll && currentScroll > 0;
+        const isScrollingDown = currentScroll > lastScroll && currentScroll > scrollThreshold;
 
-        if (currentScroll > scrollThreshold && isScrollingDown) {
-            headerTitle.classList.add('hidden');
+        if (isScrollingDown) {
+            headerTitle.style.opacity = '0';
+            headerTitle.style.transform = 'translateY(-20px)';
         } else {
-            headerTitle.classList.remove('hidden');
+            headerTitle.style.opacity = '1';
+            headerTitle.style.transform = 'translateY(0)';
         }
 
         lastScroll = currentScroll <= 0 ? 0 : currentScroll;
     }
 
     // Optimización del scroll usando requestAnimationFrame
-    let ticking = false;
     window.addEventListener('scroll', function() {
         if (!ticking) {
             window.requestAnimationFrame(function() {
