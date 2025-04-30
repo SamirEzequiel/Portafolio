@@ -4,31 +4,26 @@
  */
 document.addEventListener('DOMContentLoaded', function() {
     const headerTitle = document.querySelector('.header-title');
-    let lastScroll = 0;
     const scrollThreshold = 50;
-    let ticking = false;
 
     /**
      * Función que maneja el comportamiento del header al hacer scroll
-     * Oculta el título cuando se hace scroll hacia abajo
-     * Muestra el título cuando se hace scroll hacia arriba o se está en la parte superior
+     * Oculta el título cuando se hace scroll hacia abajo y permanece oculto
      */
     function handleScroll() {
         const currentScroll = window.pageYOffset;
-        const isScrollingDown = currentScroll > lastScroll && currentScroll > scrollThreshold;
-
-        if (isScrollingDown) {
+        
+        if (currentScroll > scrollThreshold) {
             headerTitle.style.opacity = '0';
             headerTitle.style.transform = 'translateY(-20px)';
         } else {
             headerTitle.style.opacity = '1';
             headerTitle.style.transform = 'translateY(0)';
         }
-
-        lastScroll = currentScroll <= 0 ? 0 : currentScroll;
     }
 
     // Optimización del scroll usando requestAnimationFrame
+    let ticking = false;
     window.addEventListener('scroll', function() {
         if (!ticking) {
             window.requestAnimationFrame(function() {
