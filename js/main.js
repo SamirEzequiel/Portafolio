@@ -37,21 +37,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializar el estado del header
     handleScroll();
 });
-
-/**
- * Función para mostrar notificaciones temporales
- * @param {string} message - El mensaje a mostrar
- * @param {string} type - El tipo de notificación (info, success, error)
- */
-function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.textContent = message;
-
-    document.body.appendChild(notification);
-
-    // Eliminar la notificación después de 3 segundos
-    setTimeout(() => {
-        notification.remove();
-    }, 3000);
-}
